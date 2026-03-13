@@ -2,7 +2,7 @@
 
 This repository folder contains a portable, repo-local "memory system" you can drop into a codebase so humans and AI agents can keep key project context consistent across sessions.
 
-Version: 1.0.0
+Version: 1.0.5
 
 It also includes an Agent Skills-compatible [SKILL.md](SKILL.md) that describes how an agent should read from and write to the memory files.
 
