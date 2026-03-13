@@ -23,12 +23,12 @@ This folder is meant to be committed to the target repository and treated as a s
 
 ---
 
-## Canonical Documentation
+## Canonical References
 
-To keep rules consistent over time, treat these as the canonical sources:
+To keep rules consistent over time, treat these as the canonical sources inside this folder:
 
-- How to use this system (read-first/update-last): [docs/usage.md](../docs/usage.md)
-- File format requirements: [docs/format.md](../docs/format.md)
+- How to structure each memory file: `references/` (templates)
+- Default workflow: `tech_stack.md` + `decisions.md` first, update relevant files last
 
 ## Quick Rules
 

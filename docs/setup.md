@@ -21,11 +21,12 @@ Installing this as an Agent Skill is an instruction-delivery mechanism that only
 
 Agent Skills are folders containing a `SKILL.md` plus any resources. To install this as a skill, place the folder that contains `SKILL.md` into your agent's "skills" directory.
 
-### TRAE
+### Trae
 
-- A common convention is copying this folder to: `.trae/skills/agent-memory-system/`
+- A common convention is copying this folder to: `.trae/skills/agent-memory-system/` (Unix-style)
+- Windows-style equivalent: `.trae\skills\agent-memory-system\`
 - Ensure your repo has `agent-memory-system/` at its root.
-- Verify the correct location/mechanism in TRAE's official docs for your version and environment.
+- Verify the correct location/mechanism in Trae's official docs for your version and environment.
 
 ### Claude Code
 

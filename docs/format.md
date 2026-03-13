@@ -12,7 +12,7 @@ This section summarizes the intended contents of each file. Use the templates in
 
 - Purpose: Record architectural decisions and trade-offs.
 - Update when: A significant technical choice is made or revisited.
-- Required fields: ADR number, date, context, decision, consequences.
+- Required fields: ADR number, date, status, context, decision, consequences.
 
 ## bugs.md
 

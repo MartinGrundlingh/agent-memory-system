@@ -3,6 +3,7 @@
 > **TEMPLATE REQUIREMENT:** Each ADR must include:
 > - **ADR Number** (ADR-001, ADR-002, etc.)
 > - **Date** (YYYY-MM-DD)
+> - **Status** (Proposed/Accepted/Superseded)
 > - **Context** (why the decision was needed)
 > - **Decision** (what was chosen)
 > - **Alternatives Considered** (optional, only if alternatives were evaluated)
@@ -19,6 +20,9 @@
 ## ADRs
 
 ### ADR-001: <title> (YYYY-MM-DD)
+
+**Status:**
+- Proposed/Accepted/Superseded
 
 **Context:**
 - <why this decision is needed>

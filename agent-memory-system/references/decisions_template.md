@@ -8,6 +8,7 @@ Note: The example entries in this template are generic. Adapt examples to match 
 
 Each decision should include:
 - Date and ADR number
+- Status (proposed/accepted/superseded)
 - Context (why the decision was needed)
 - Decision (what was chosen)
 - Alternatives considered (optional if specified)
@@ -16,6 +17,9 @@ Each decision should include:
 ## Example Entries
 
 ### ADR-001: Use Short-Lived CI Authentication (2025-01-10)
+
+**Status:**
+- Accepted
 
 **Context:**
 - Need secure authentication from CI to a cloud provider and internal services
@@ -38,6 +42,9 @@ Each decision should include:
 - ❌ Requires CI OIDC (or equivalent) support
 
 ### ADR-002: Standardize Database Migrations (2025-01-12)
+
+**Status:**
+- Accepted
 
 **Context:**
 - Need version control for database schema changes
@@ -62,6 +69,9 @@ Each decision should include:
 
 ### ADR-003: Use Managed Database Service (2025-01-15)
 
+**Status:**
+- Accepted
+
 **Context:**
 - Need a relational database with high availability and backups
 - Want to reduce operational overhead
@@ -77,7 +87,7 @@ Each decision should include:
 
 **Consequences:**
 - ✅ Managed service (automated backups, HA)
-- ❌ Higher cost than Cloud SQL
+- ❌ Higher cost than self-managed
 - ❌ Vendor lock-in considerations
 
 ## Tips
