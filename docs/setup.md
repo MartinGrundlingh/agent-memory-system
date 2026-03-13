@@ -5,6 +5,8 @@ This memory system is designed to work in two modes:
 - **Agent Skill (recommended when supported):** Install this folder as an Agent Skill so compatible agents can load instructions on demand.
 - **Drop-in (fallback if skills are not supported):** Copy `agent-memory-system/` into your repository and commit it.
 
+When installing a skill or adding agent instructions, follow your agent/tool's official documentation. Tool UIs, file locations, and supported formats change over time.
+
 ## Why "Agent Skill" Depends on Tooling
 
 The core of this project is the on-disk `agent-memory-system/` folder. Any agent that can read and edit files can use it, even if it does not support the Agent Skills standard.
@@ -17,28 +19,28 @@ Installing this as an Agent Skill is an instruction-delivery mechanism that only
 
 ## Agent Skill Install (Recommended When Supported)
 
-Agent Skills are folders containing a `SKILL.md` plus any resources. To install this as a skill, place this folder into your agent's "skills" directory.
+Agent Skills are folders containing a `SKILL.md` plus any resources. To install this as a skill, place the folder that contains `SKILL.md` into your agent's "skills" directory.
 
 ### TRAE
 
-- Copy this folder to: `.trae/skills/agent-memory-system/`
+- A common convention is copying this folder to: `.trae/skills/agent-memory-system/`
 - Ensure your repo has `agent-memory-system/` at its root.
-- Note: The `.trae/skills/...` path is TRAE-specific. Other tools use different locations (or may not support Agent Skills).
+- Verify the correct location/mechanism in TRAE's official docs for your version and environment.
 
 ### Claude Code
 
-- Install this folder as a skill in whatever directory Claude Code uses for skills in your environment.
-- If you don't have skills enabled, use the Drop-In install and add the snippet below to your `CLAUDE.md` (or equivalent).
+- Follow Claude Code's official docs for skill installation (locations and enablement vary).
+- If skills are not available, use the Drop-In install and add the snippet below to your agent instruction mechanism (for example, `CLAUDE.md` if your setup uses it).
 
 ### GitHub Copilot
 
 - Use Drop-In install.
-- Add the snippet below to `.github/copilot-instructions.md` (or your organization's equivalent).
+- Add the snippet below to Copilot's instruction mechanism (some setups use `.github/copilot-instructions.md`, but verify in official docs).
 
 ### Replit
 
 - Use Drop-In install.
-- Add the snippet below to the project's agent instruction file (for example, `replit.md` if your setup uses it).
+- Add the snippet below to the project's agent instruction mechanism (some setups use `replit.md`, but verify in official docs).
 
 ### Generic (Works Everywhere)
 

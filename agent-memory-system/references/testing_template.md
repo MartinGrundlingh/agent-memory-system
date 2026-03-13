@@ -9,25 +9,25 @@ Note: The example entries in this template are generic. Adapt commands, tools, a
 
 ### Unit Tests
 - **Scope**: Individual functions, components, utilities.
-- **Framework**: (e.g., Jest, Vitest)
-- **Command**: `npm run test:unit`
+- **Framework**: (fill in)
+- **Command**: (e.g., `./run-tests --unit`)
 - **When to Run**: Before every commit.
 
 ### Integration Tests
 - **Scope**: API endpoints, database interactions, component integration.
-- **Framework**: (e.g., Supertest, React Testing Library)
-- **Command**: `npm run test:integration`
+- **Framework**: (fill in)
+- **Command**: (e.g., `./run-tests --integration`)
 - **When to Run**: Before pushing to main.
 
 ### End-to-End (E2E) Tests
 - **Scope**: Full user flows (signup, checkout).
-- **Framework**: (e.g., Cypress, Playwright)
-- **Command**: `npm run test:e2e`
+- **Framework**: (fill in)
+- **Command**: (e.g., `./run-tests --e2e`)
 - **When to Run**: Nightly or before release.
 
 ## 2. Mocking Strategy
 
-- **External APIs**: Mock all third-party services (Stripe, Twilio) in unit/integration tests.
+- **External APIs**: Mock third-party services in unit/integration tests.
 - **Database**: Use a separate test database; seed before tests, wipe after.
 - **Time**: Mock `Date.now()` for time-sensitive logic.
 

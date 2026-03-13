@@ -2,11 +2,11 @@
 
 > **TEMPLATE REQUIREMENT:** Each work entry must include:
 > - **Date** (YYYY-MM-DD)
-> - **Ticket ID** (Jira/GitHub identifier - if possible)
+> - **Ticket ID** (identifier from your ticket system, if available)
 > - **Brief Description** (1-2 lines max)
 > - **URL** (link to ticket - if possible)
 > - **Status** (optional: Completed, In Progress, Blocked)
-> - **Full Technical Description** (Technical details of the issue.)
+> - **Notes** (brief technical context; keep short and link to the ticket/PR for details)
 >
 > See [issues_template.md](references/issues_template.md) for examples.
 

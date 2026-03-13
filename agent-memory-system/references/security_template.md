@@ -9,7 +9,7 @@ Note: The example entries in this template are generic. Adapt sources/tools and 
 Each security fix entry should include:
 - Date (YYYY-MM-DD)
 - Vulnerability Type (e.g., XSS, SQL Injection, Dependency Vulnerability)
-- Tool/Source (e.g., Snyk, SonarCloud, OWASP ZAP, Manual Review)
+- Tool/Source (e.g., dependency scanner, SAST tool, DAST tool, manual review)
 - Brief description of the issue
 - Solution or fix applied
 - Prevention notes (how to avoid in future)
@@ -18,24 +18,24 @@ Each security fix entry should include:
 
 ### 2025-02-15 - SQL Injection in Login
 - **Vulnerability**: SQL Injection (High Severity)
-- **Source**: SonarCloud
-- **Issue**: User input directly concatenated into SQL query in `auth.js`
-- **Solution**: Replaced with parameterized queries using `pg-promise`
+- **Source**: Static analysis tool
+- **Issue**: User input directly concatenated into an SQL query
+- **Solution**: Switched to parameterized queries
 - **Prevention**: Always use parameterized queries; run SAST before merge
 
-### 2025-02-20 - Outdated Dependency (lodash)
+### 2025-02-20 - Outdated Dependency
 - **Vulnerability**: Prototype Pollution (Critical)
-- **Source**: Snyk
-- **Issue**: `lodash` version 4.17.15 has a known vulnerability
-- **Solution**: Upgraded to `lodash` 4.17.21 via `npm update`
-- **Prevention**: Run `npm audit` regularly; configure Snyk to block PRs with critical vulns
+- **Source**: Dependency scanner
+- **Issue**: A transitive dependency had a known vulnerability
+- **Solution**: Upgraded to a patched version
+- **Prevention**: Run dependency security checks regularly; block merges on critical findings
 
 ### 2025-02-25 - Missing HSTS Header
 - **Vulnerability**: Insecure Transport (Medium)
-- **Source**: OWASP ZAP
+- **Source**: DAST tool
 - **Issue**: Response headers missing `Strict-Transport-Security`
-- **Solution**: Added HSTS middleware in Express app configuration
-- **Prevention**: Use `helmet` middleware by default for all Express apps
+- **Solution**: Enabled HSTS in the application or edge/proxy configuration
+- **Prevention**: Use a standard security headers baseline for all services
 
 ## Tips
 

@@ -24,8 +24,8 @@ It also includes an Agent Skills-compatible [SKILL.md](SKILL.md) that describes 
 
 If your agent supports the Agent Skills format, install this folder as a skill so the agent can load the instructions on demand:
 
-- Install the entire `agent-memory-system/` folder into your agent's skills directory (the location is tool-specific).
-- Ensure the agent can also access your project repository so it can read and update `agent-memory-system/`.
+- Install the folder that contains `SKILL.md` as the skill package (the exact install location/mechanism is tool-specific).
+- Ensure the agent can also access your project repository so it can read and update the repo-local memory files in `agent-memory-system/`.
 
 See [docs/setup.md](docs/setup.md) for concrete examples (TRAE, Claude Code, Copilot, Replit, and generic fallback).
 

@@ -5,7 +5,7 @@
 > Each entry should include:
 > - Date (YYYY-MM-DD)
 > - Vulnerability type (e.g., XSS, SQL Injection, Dependency Vulnerability)
-> - Tool/source (e.g., Snyk, CodeQL, Semgrep, OWASP ZAP, Manual Review)
+> - Tool/source (e.g., dependency scanner, SAST tool, DAST tool, manual review)
 > - Brief description of the issue
 > - Solution or fix applied
 > - Prevention notes (how to avoid in future)

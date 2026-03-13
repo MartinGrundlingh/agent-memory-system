@@ -15,29 +15,29 @@ Each decision should include:
 
 ## Example Entries
 
-### ADR-001: Use Workload Identity Federation for GitHub Actions (2025-01-10)
+### ADR-001: Use Short-Lived CI Authentication (2025-01-10)
 
 **Context:**
-- Need secure authentication from GitHub Actions to GCP
-- Service account keys are deprecated and considered insecure
-- Want to avoid managing long-lived credentials
+- Need secure authentication from CI to a cloud provider and internal services
+- Long-lived credentials increase breach risk and operational burden
+- Want stronger auditing and automatic rotation
 
 **Decision:**
-- Use Workload Identity Federation (WIF) for GitHub Actions authentication
-- Configure via `WIF_PROVIDER` and `WIF_SERVICE_ACCOUNT` secrets
+- Use short-lived, workload-identity style authentication via CI OIDC (or equivalent)
+- Avoid committing or distributing long-lived keys
 
 **Alternatives Considered:**
-- Service account JSON keys → Rejected: security risk, manual rotation required
-- Environment-specific credentials → Rejected: harder to manage across repos
+- Long-lived service credentials → Rejected: security risk, manual rotation required
+- Per-environment static credentials → Rejected: harder to manage across projects
 
 **Consequences:**
 - ✅ More secure (no long-lived credentials)
 - ✅ Automatic credential rotation
 - ✅ Better audit trail
 - ❌ Slightly more complex initial setup
-- ❌ Requires GitHub OIDC support
+- ❌ Requires CI OIDC (or equivalent) support
 
-### ADR-002: Use Alembic for Database Migrations (2025-01-12)
+### ADR-002: Standardize Database Migrations (2025-01-12)
 
 **Context:**
 - Need version control for database schema changes
@@ -45,44 +45,40 @@ Each decision should include:
 - Want to avoid manual SQL scripts and migration conflicts
 
 **Decision:**
-- Use Alembic as the database migration tool
-- Store migrations in `alembic/versions/` directory
-- Use auto-generate feature for model changes
+- Use a dedicated database migration tool
+- Store migrations in version control alongside the application code
+- Prefer generated migrations when supported, with manual review
 
 **Alternatives Considered:**
 - Raw SQL scripts → Rejected: no versioning, error-prone
-- Flask-Migrate → Rejected: too tied to Flask framework
-- Django migrations → Rejected: using FastAPI, not Django
+- Framework-specific migration tooling → Rejected: reduces portability
 
 **Consequences:**
 - ✅ Version-controlled schema changes
-- ✅ Automatic migration generation from models
+- ✅ Reproducible deployments and rollbacks
 - ✅ Easy rollback capability
 - ❌ Learning curve for team
-- ❌ Must remember to generate migrations after model changes
+- ❌ Requires discipline to keep migrations in sync with models
 
-### ADR-003: Use AlloyDB Instead of Cloud SQL (2025-01-15)
+### ADR-003: Use Managed Database Service (2025-01-15)
 
 **Context:**
-- Need PostgreSQL-compatible database in GCP
-- Require high availability and automatic backups
-- Performance-critical application with complex queries
+- Need a relational database with high availability and backups
+- Want to reduce operational overhead
+- Performance is important for core workloads
 
 **Decision:**
-- Use AlloyDB for PostgreSQL instead of Cloud SQL
-- Configure with automated backups and point-in-time recovery
+- Use a managed database offering that supports backups and point-in-time recovery
+- Prefer the simplest managed option that meets performance and reliability needs
 
 **Alternatives Considered:**
-- Cloud SQL PostgreSQL → Rejected: slower query performance
-- Self-managed PostgreSQL on GCE → Rejected: high operational overhead
-- Firestore → Rejected: need relational data model and SQL
+- Self-managed database → Rejected: high operational overhead
+- Non-relational store → Rejected: need relational model and SQL
 
 **Consequences:**
-- ✅ Better query performance (2-4x faster than Cloud SQL)
-- ✅ PostgreSQL compatibility
 - ✅ Managed service (automated backups, HA)
 - ❌ Higher cost than Cloud SQL
-- ❌ Newer service, less community documentation
+- ❌ Vendor lock-in considerations
 
 ## Tips
 
